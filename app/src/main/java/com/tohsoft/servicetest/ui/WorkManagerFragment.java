@@ -29,6 +29,6 @@ public class WorkManagerFragment extends BaseServiceFragment {
 
     @Override
     public void onClickStop() {
-
+        WorkManager.getInstance().cancelAllWork();
     }
 }

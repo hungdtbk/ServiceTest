@@ -18,6 +18,6 @@ public class FirebaseJobDispatcherFragment extends BaseServiceFragment {
 
     @Override
     public void onClickStop() {
-
+        MyJobService.stop();
     }
 }

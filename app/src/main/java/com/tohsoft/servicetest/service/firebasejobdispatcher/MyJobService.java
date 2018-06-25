@@ -39,4 +39,9 @@ public class MyJobService extends JobService {
         dispatcher.mustSchedule(myJob);
         LogUtils.logD("start MyJobService");
     }
+
+    public static void stop(){
+        FirebaseJobDispatcher dispatcher = new FirebaseJobDispatcher(new GooglePlayDriver(Application.getInstance()));
+        dispatcher.cancelAll();
+    }
 }

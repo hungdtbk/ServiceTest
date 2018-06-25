@@ -10,7 +10,7 @@ import java.util.Locale;
  */
 public class DateUtil {
     public static String getHHmmString() {
-        DateFormat dateFormat = new SimpleDateFormat("hh:mm", Locale.US);
+        DateFormat dateFormat = new SimpleDateFormat("HH:mm", Locale.US);
         return dateFormat.format(System.currentTimeMillis());
     }
 
