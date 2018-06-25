@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_above="@id/btn_start"
         android:padding="20dp"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimary"
         android:text="Mô tả về cách hoạt động của service này và cách để test nó"
         android:layout_height="match_parent" />
     <Button

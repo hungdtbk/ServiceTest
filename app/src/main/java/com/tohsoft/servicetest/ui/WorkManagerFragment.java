@@ -14,7 +14,11 @@ import androidx.work.WorkManager;
 public class WorkManagerFragment extends BaseServiceFragment {
     @Override
     protected String getDescriptionText() {
-        return "";
+        return "Service sẽ được kích hoạt khoảng 15 phút/ 1 lần" +
+                "\n\nCách test: Ấn nút Start để khởi động service >> vào recent app kill app đi " +
+                ">> sau đó chờ đợi & quan sát notification được show ra." +
+                "\nTheo dõi trong khoảng 15-17 phút. " +
+                "Nếu có notification show ra(sau khi đã kill app) thì chứng tỏ WorkManager có hoạt động";
     }
 
     @Override
