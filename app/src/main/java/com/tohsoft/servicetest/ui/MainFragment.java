@@ -43,11 +43,13 @@ public class MainFragment extends Fragment {
                 addFragment(new FirebaseJobDispatcherFragment());
                 break;
             case R.id.job_scheduler:
+                addFragment(new JobSchedulerFragment());
                 break;
             case R.id.work_manager:
                 addFragment(new WorkManagerFragment());
                 break;
             case R.id.alarm_manager:
+                addFragment(new AlarmMangerFragment());
                 break;
             case R.id.service_background:
                 break;

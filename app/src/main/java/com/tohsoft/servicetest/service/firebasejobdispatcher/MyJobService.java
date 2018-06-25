@@ -18,7 +18,7 @@ import com.tohsoft.util.LogUtils;
 public class MyJobService extends JobService {
     @Override
     public boolean onStartJob(com.firebase.jobdispatcher.JobParameters job) {
-        LogUtils.logD("MyJobService onStartJob");
+        LogUtils.logD("MyJobSchedulerService onStartJob");
         JobIntentService.enqueueWork(this, MyJobIntentService.class, 1, new Intent());
         return false;
     }
@@ -32,12 +32,12 @@ public class MyJobService extends JobService {
         FirebaseJobDispatcher dispatcher = new FirebaseJobDispatcher(new GooglePlayDriver(Application.getInstance()));
         Job myJob = dispatcher.newJobBuilder()
                 .setService(MyJobService.class) // the JobService that will be called
-                .setTag("MyJobService")        // uniquely identifies the job
+                .setTag("MyJobSchedulerService")        // uniquely identifies the job
                 .setRecurring(true)
                 .setTrigger(Trigger.executionWindow(10, 10 + 10))
                 .build();
         dispatcher.mustSchedule(myJob);
-        LogUtils.logD("start MyJobService");
+        LogUtils.logD("start MyJobSchedulerService");
     }
 
     public static void stop(){
