@@ -29,4 +29,7 @@ dependencies {
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     compile 'com.firebase:firebase-jobdispatcher:0.8.5'
+    def work_version = "1.0.0-alpha03"
+    implementation "android.arch.work:work-runtime:$work_version"
+    implementation "android.arch.work:work-firebase:$work_version"
 }

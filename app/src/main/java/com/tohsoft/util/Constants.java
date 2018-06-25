@@ -5,4 +5,5 @@ package com.tohsoft.util;
  */
 public class Constants {
     public static final int NOTIFICATION_ID_FIREBASEJOBDISPATCHER = 11;
+    public static final int NOTIFICATION_ID_WORK_MANAGER = 12;
 }

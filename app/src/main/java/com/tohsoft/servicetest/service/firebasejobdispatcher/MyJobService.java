@@ -34,7 +34,7 @@ public class MyJobService extends JobService {
                 .setService(MyJobService.class) // the JobService that will be called
                 .setTag("MyJobService")        // uniquely identifies the job
                 .setRecurring(true)
-                .setTrigger(Trigger.executionWindow(60, 60 + 10))
+                .setTrigger(Trigger.executionWindow(10, 10 + 10))
                 .build();
         dispatcher.mustSchedule(myJob);
         LogUtils.logD("start MyJobService");

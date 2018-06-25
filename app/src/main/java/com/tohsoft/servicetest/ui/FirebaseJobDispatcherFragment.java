@@ -8,7 +8,7 @@ import com.tohsoft.servicetest.service.firebasejobdispatcher.MyJobService;
 public class FirebaseJobDispatcherFragment extends BaseServiceFragment {
     @Override
     protected String getDescriptionText() {
-        return "FirebaseJobDispatcherFragment";
+        return "Service sex ";
     }
 
     @Override

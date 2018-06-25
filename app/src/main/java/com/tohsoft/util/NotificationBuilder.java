@@ -44,6 +44,7 @@ public class NotificationBuilder {
 
     private static void initView(Notification notification, String serviceName) {
         notification.contentView.setTextViewText(R.id.tv_notify, serviceName);
+        notification.contentView.setTextViewText(R.id.tv_notify_time, DateUtil.getHHmmString());
 //        notification.contentView.setTextViewText(R.id.tv_notify_second_line, unInformedEmail.subject);
 //        notification.contentView.setViewVisibility(R.id.tv_other_new_mails_count,
 //                newEmails.size() - 1 > 0 ? View.VISIBLE : View.GONE);

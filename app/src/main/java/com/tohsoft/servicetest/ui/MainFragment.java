@@ -45,6 +45,7 @@ public class MainFragment extends Fragment {
             case R.id.job_scheduler:
                 break;
             case R.id.work_manager:
+                addFragment(new WorkManagerFragment());
                 break;
             case R.id.alarm_manager:
                 break;

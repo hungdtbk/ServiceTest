@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.tohsoft.servicetest.R;
+import com.tohsoft.util.ToastUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -56,6 +57,7 @@ public abstract class BaseServiceFragment extends Fragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_start:
+                ToastUtils.show("Start " + this.getClass().getSimpleName().replace("Fragment", ""));
                 onClickStart();
                 break;
             case R.id.btn_stop:
