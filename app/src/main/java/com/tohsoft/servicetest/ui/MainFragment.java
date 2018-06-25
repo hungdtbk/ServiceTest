@@ -52,6 +52,7 @@ public class MainFragment extends Fragment {
             case R.id.service_background:
                 break;
             case R.id.service_foreground:
+                addFragment(new ForegroundServiceFragment());
                 break;
             case R.id.broad_cast_receiver:
                 break;
