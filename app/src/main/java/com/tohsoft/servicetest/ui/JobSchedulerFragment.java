@@ -29,7 +29,13 @@ public class JobSchedulerFragment extends BaseServiceFragment {
 
     @Override
     protected String getDescriptionText() {
-        return "JobScheduler: min là 15 phút notification 1 lần";
+        return "JobSchedulerService sẽ được kích hoạt tối thiểu 15 phút/ 1 lần " +
+                "\nCách test:" +
+                "\n>>Ấn nút Start để khởi động service " +
+                "\n>>Vào recent app kill app đi " +
+                "\n>>Sau đó chờ đợi & quan sát notification được show ra tên JobSchedulerService." +
+                "\n>>Chờ 15 phút " +
+                "\n Nếu có notification show ra(sau khi đã kill app) thì chứng tỏ JobSchedulerService có hoạt động";
     }
 
     @Override

@@ -15,7 +15,12 @@ public class AlarmMangerFragment extends BaseServiceFragment {
 
     @Override
     protected String getDescriptionText() {
-        return "AlarmManger : min là 1 phút notification 1 lần";
+        return "AlarmManager sẽ được kích hoạt tối thiểu 1 phút/ 1 lần " +
+                "\nCách test: " +
+                "\n>>Ấn nút Start để khởi động service >> vào recent app kill app đi " +
+                "\n>>sau đó chờ đợi & quan sát notification được show ra tên AlarmManagerReceiver." +
+                "\n>>Chờ 1 phút " +
+                "\n Nếu có notification show ra(sau khi đã kill app) thì chứng tỏ AlarmManagerReceiver có hoạt động";
     }
 
     @Override
