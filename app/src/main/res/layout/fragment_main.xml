@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="20dp">
+
+    <Button
+        android:id="@+id/fire_base_job_dispatcher"
+        style="@style/MainButton"
+        android:text="Firebase Job Dispatcher" />
+
+    <Button
+        android:id="@+id/job_scheduler"
+        style="@style/MainButton"
+        android:text="Job Scheduler" />
+
+    <Button
+        android:id="@+id/work_manager"
+        style="@style/MainButton"
+        android:text="Work Manager" />
+
+    <Button
+        android:id="@+id/alarm_manager"
+        style="@style/MainButton"
+        android:text="Alarm Manager" />
+
+    <Button
+        android:id="@+id/service_background"
+        style="@style/MainButton"
+        android:text="Service Background" />
+
+    <Button
+        android:id="@+id/service_foreground"
+        style="@style/MainButton"
+        android:text="ServiceForeground" />
+
+    <Button
+        android:id="@+id/broad_cast_receiver"
+        style="@style/MainButton"
+        android:text="Broadcast Receiver" />
+</LinearLayout>
