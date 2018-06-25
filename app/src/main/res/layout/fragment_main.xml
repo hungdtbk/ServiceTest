@@ -28,6 +28,7 @@
     <Button
         android:id="@+id/service_background"
         style="@style/MainButton"
+        android:visibility="gone"
         android:text="Service Background" />
 
     <Button
@@ -38,5 +39,6 @@
     <Button
         android:id="@+id/broad_cast_receiver"
         style="@style/MainButton"
+        android:visibility="gone"
         android:text="Broadcast Receiver" />
 </LinearLayout>
