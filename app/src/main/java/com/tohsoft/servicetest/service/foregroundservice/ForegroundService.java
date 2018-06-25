@@ -25,11 +25,15 @@ import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 
 public class ForegroundService extends Service {
     private static final String LOG_TAG = "ForegroundService";
     public static boolean IS_SERVICE_RUNNING = false;
+
+    CompositeDisposable compositeDisposable;
 
     @Override
     public void onCreate() {
@@ -44,7 +48,8 @@ public class ForegroundService extends Service {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             startInForeground();
         }
-        Observable.interval(0, 10, TimeUnit.SECONDS)
+        compositeDisposable = new CompositeDisposable();
+        Disposable interval = Observable.interval(0, 10, TimeUnit.SECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<Long>() {
                     @Override
@@ -52,6 +57,7 @@ public class ForegroundService extends Service {
                         NotificationBuilder.showNotification(ForegroundService.this, "ForegroundService", Constants.NOTIFICATION_ID_FOREGROUND_SERVICE);
                     }
                 });
+        compositeDisposable.add(interval);
         return START_STICKY;
     }
 
@@ -78,6 +84,7 @@ public class ForegroundService extends Service {
 
     @Subscribe()
     public void onMessageEvent(Event.StopForegroundService event) {
+        compositeDisposable.dispose();
         stopForeground(true);
         stopSelf();
     }
