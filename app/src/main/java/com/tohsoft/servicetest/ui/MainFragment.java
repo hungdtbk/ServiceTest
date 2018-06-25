@@ -1,11 +1,15 @@
 package com.tohsoft.servicetest.ui;
 
 
+import android.content.Context;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.PowerManager;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.tohsoft.servicetest.R;
 
@@ -21,6 +25,8 @@ public class MainFragment extends Fragment {
 
     Unbinder unbinder;
 
+    TextView status;
+
     public MainFragment() {
         // Required empty public constructor
     }
@@ -32,6 +38,13 @@ public class MainFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_main, container, false);
         unbinder = ButterKnife.bind(this, view);
+        status = view.findViewById(R.id.status);
+        PowerManager powerManager = (PowerManager)
+                getActivity().getSystemService(Context.POWER_SERVICE);
+        if (powerManager != null && android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP
+                && powerManager.isPowerSaveMode()) {
+            status.setText("POWER SAVE MODE ON");
+        }
         return view;
     }
 
